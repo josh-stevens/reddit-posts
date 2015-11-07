@@ -1,0 +1,15 @@
+.post {
+  margin-bottom:20px;
+}
+
+.author {
+  color:blue;
+}
+
+.thumbnail {
+  height: 90px;
+  width: 90px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+}
