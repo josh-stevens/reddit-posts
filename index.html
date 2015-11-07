@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Reddit Search &amp; Share</title>
+  <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="styles.css"> 
   <script src="js/angular.min.js"></script>
   <script src="js/app.js"></script>
@@ -12,14 +13,19 @@
 <body ng-app="ngReddit">
   <div class="container" ng-controller="NgRedditCtrl">
     <div class="navbar" role="navigation">
-      <a class="logo">Logo</a>
+      <a class="logo" href="#">Reddit</a>
       <input class="searchbar" ng-model="category" ng-change="getPosts()">
     </div>
     <div class="main">
       <div class="post" ng-repeat="post in posts">
         <div class="thumbnail" style="background-image:url({{post.data.thumbnail}})"></div>
-        <span class="author"> {{ post.data.author }}</span>
-        <span class="title">{{ post.data.title }}</span>
+        <div class="author"> {{ post.data.author }}</div>
+        <div class="title">{{ post.data.title }}</div>
+        <div class="comments">{{ post.data.num_comments }} comments</div>
+        <div class="ups">{{ post.data.ups }} ups</div>
+        <div class="downs">{{ post.data.downs }} downs</div>
+        <div class="clear"></div>
+        <hr ng-hide="$last">
       </div>
     </div>
   </div>

@@ -1,9 +1,36 @@
+body {
+  font-family:'Exo';
+  font-weight: 400;
+}
+
+.navbar {
+  top: -8px;
+  left: -8px;
+  width: 100%;
+  background-color: rgb(0,182,255);
+  height: 38px;
+  position: relative;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  padding-left:100px;
+  position:relative;
+  top: 10px;
+}
+
 .post {
-  margin-bottom:20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 60%;
 }
 
 .author {
-  color:blue;
+  color: rgb(0,182,255);
 }
 
 .thumbnail {
@@ -13,4 +40,23 @@
   background-size: cover;
   border-radius: 50%;
   border: 2px solid #d3d3d3;
+  float: left;
+}
+
+.comments {
+  float:left;
+}
+
+.clear {
+  clear:both;
+}
+
+.ups {
+  float:left;
+  margin-left:5px;
+}
+
+.downs {
+  margin-left:5px;
+  float:left;
 }
