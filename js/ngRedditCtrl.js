@@ -9,13 +9,21 @@ ngReddit.controller('NgRedditCtrl', function($scope, Reddit) {
     Reddit.getPosts($scope.category)
       .then(function(res) {
         $scope.posts = res.data.data.children;
+
+        // If the thumbnail property is anything other than a link,
+        // set it to the 'unknown' image
         $scope.posts.map(function(post) {
-          if (post.data.thumbnail === "" || post.data.thumbnail === "nsfw") {
+          if (post.data.thumbnail.slice(0,4) !== "http") {
             post.data.thumbnail = "images/unknown.png";
           }
         });
-        console.log("Posts: ", $scope.posts);
       });
+  };
+
+  $scope.overlayPost = function(index) {
+    var id = '#' + index;
+    $scope.posts[index].clicked = true;
+    $(id).draggable({revert:true});
   };
 
   $scope.getPosts();
