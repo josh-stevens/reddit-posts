@@ -19,7 +19,9 @@
       <a class="logo" href="#">Reddit</a>
       <input class="searchbar" ng-model="category" ng-change="getPosts()">
     </div>
+
     <div class="main">
+      <!-- begin post -->
       <div class="post" ng-repeat="post in posts" ng-click="overlayPost($index)">
         <div class="thumbnail" style="background-image:url({{post.data.thumbnail}})"></div>
         <div class="author"> {{ post.data.author }}</div>
@@ -28,15 +30,35 @@
         <div class="ups">{{ post.data.ups }} ups</div>
         <div class="downs">{{ post.data.downs }} downs</div>
         <div class="clear"></div>
+
+        <!-- begin overlay for post -->
         <div class="overlay" ng-show="post.clicked">
-          <div id="{{$index}}" class="draggablePost">
+          <div id="{{$index}}" class="draggable-rect">
             <div class="thumbnail overlay-thumbnail" style="background-image:url({{post.data.thumbnail}})"></div>
+            <div class="overlay-author">{{ post.data.author }}</div>
+            <div class="overlay-title">{{ post.data.title }}</div>
+            <div class="overlay-comments">
+              {{ post.data.num_comments }} comments
+              {{ post.data.ups }} ups
+            </div>
           </div>
           <div class="instructions">Drag the card on the left to the desired action.</div>
+          <div id="reddit-{{$index}}" class="droppable-rect reddit">
+            <img src="images/reddit-logo.png" /><br>
+            Open on Reddit
+          </div>
+          <div id="mail-{{$index}}" class="droppable-rect mail">
+            <img src="images/mail-logo.png" /><br>
+            Email to a Friend
+          </div>
         </div>
+        <!-- end overlay -->
+
         <hr ng-hide="$last">
       </div>
+      <!-- end post -->
     </div>
+
   </div>
 </body>
 </html>

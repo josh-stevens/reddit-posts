@@ -9,6 +9,7 @@ ngReddit.controller('NgRedditCtrl', function($scope, Reddit) {
     Reddit.getPosts($scope.category)
       .then(function(res) {
         $scope.posts = res.data.data.children;
+        console.log($scope.posts)
 
         // If the thumbnail property is anything other than a link,
         // set it to the 'unknown' image
@@ -20,10 +21,28 @@ ngReddit.controller('NgRedditCtrl', function($scope, Reddit) {
       });
   };
 
+  // Function sets up drag/drop elements and toggles the 'clicked' property
+  // of the post which will trigger the overlay div's ng-show
   $scope.overlayPost = function(index) {
     var id = '#' + index;
-    $scope.posts[index].clicked = true;
     $(id).draggable({revert:true});
+
+    var link = "http://www.reddit.com" + $scope.posts[index].data.permalink;
+    $('#reddit-'+index).droppable({
+      drop: function() {
+        window.open(link);
+      }
+    });
+
+    $('#mail-'+index).droppable({
+      drop: function() {
+        var subj = "Check%20out%20this%20Reddit%20post";
+        var body = link;
+        location.href= "mailto:?subject="+subj+"&body="+body;
+      }
+    });
+
+    $scope.posts[index].clicked = !$scope.posts[index].clicked;
   };
 
   $scope.getPosts();

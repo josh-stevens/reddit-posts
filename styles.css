@@ -9,7 +9,7 @@ hr {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,26 +18,68 @@ hr {
   background-color: rgba(0,0,0,0.5);
 }
 
-.draggablePost {
-  background-color: rgb(244,247,250);
+.draggable-rect {
+  background-color: white;
   border-radius: 10px;
   height: 300px;
   width: 300px;
-  top: 150px;
+  top: 155px;
   left: 150px;
   position:relative;
-  display:inline-block;
+  text-align: center;
+  overflow: auto;
+  /*display:inline-block;*/
+}
+
+.overlay-thumbnail {
+  margin-left: 100px;
+}
+
+.overlay-author {
+  clear: both;
+  color: rgb(0,182,255);
+}
+
+.overlay-title {
+  position: relative;
+  top: 20px;
+}
+
+.overlay-comments {
+  position: relative;
+  font-size: 12px;
+  top: 50px;
 }
 
 .instructions {
   color:white;
   position: relative;
   left: 550px;
+  top: -100px;
+  width: 120px;
 }
 
-.overlay-thumbnail {
-  margin-left: 100px;
+.droppable-rect {
+  background-color: white;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  position: relative;
+  left: 770px;
+  font-size: 22px;
+  text-align:center;
+  vertical-align:middle;
+  color: rgb(0,182,255);
 }
+
+.reddit {
+  top: -200px;
+}
+
+.mail {
+  top: -150px;
+}
+
 
 .navbar {
   top: -8px;
