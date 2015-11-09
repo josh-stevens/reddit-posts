@@ -6,8 +6,10 @@ ngReddit.controller('NgRedditCtrl', function($scope, Reddit) {
   // Function is called on page load (line 48) and every time the
   // search field is changed
   $scope.getPosts = function() {
+    $scope.loading = true;
     Reddit.getPosts($scope.category)
       .then(function(res) {
+        $scope.loading = false;
         $scope.posts = res.data.data.children;
         console.log($scope.posts)
 
