@@ -23,8 +23,8 @@ hr {
   border-radius: 10px;
   height: 300px;
   width: 300px;
-  top: 155px;
-  left: 150px;
+  top: 25%;
+  left: 15%;
   position:relative;
   text-align: center;
   overflow: auto;
@@ -66,7 +66,7 @@ hr {
 .instructions {
   color:white;
   position: relative;
-  left: 550px;
+  left: 48%;
   top: -100px;
   width: 120px;
 }
@@ -77,7 +77,7 @@ hr {
   height: 150px;
   border-radius: 10px;
   position: relative;
-  left: 770px;
+  left: 65%;
   font-size: 22px;
   text-align:center;
   vertical-align:middle;
@@ -85,11 +85,11 @@ hr {
 }
 
 .reddit {
-  top: -200px;
+  top: -25%;
 }
 
 .mail {
-  top: -150px;
+  top: -20%;
 }
 
 .mail-content {
