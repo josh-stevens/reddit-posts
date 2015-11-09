@@ -45,6 +45,18 @@ hr {
   top: 20px;
 }
 
+.overlay-comment-sprite {
+  width: 16px;
+  height: 16px;
+  background: url(images/icon-sprite.png) 0 0;
+}
+
+.overlay-up-sprite {
+  width: 16px;
+  height: 16px;
+  background: url(images/icon-sprite.png) 0 32px;
+}
+
 .overlay-comments {
   position: relative;
   font-size: 12px;
@@ -78,6 +90,11 @@ hr {
 
 .mail {
   top: -150px;
+}
+
+.mail-content {
+  position:relative;
+  top:20px;
 }
 
 
@@ -155,19 +172,43 @@ hr {
   float: left;
 }
 
+.comment-sprite {
+  float:left;
+  width: 16px;
+  height: 16px;
+  background: url(images/icon-sprite.png) 0 0;
+}
+
 .comments {
   float:left;
   font-size:12px;
+  margin-left:5px;
 }
 
 .clear {
   clear:both;
 }
 
+.up-sprite {
+  margin-left:5px;
+  float:left;
+  width: 16px;
+  height: 16px;
+  background: url(images/icon-sprite.png) 0 32px;
+}
+
 .ups {
   float:left;
   margin-left:5px;
   font-size:12px;
+}
+
+.down-sprite {
+  margin-left:5px;
+  float:left;
+  width: 16px;
+  height: 16px;
+  background: url(images/icon-sprite.png) 0 16px;
 }
 
 .downs {

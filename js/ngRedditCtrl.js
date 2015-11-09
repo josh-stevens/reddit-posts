@@ -3,7 +3,7 @@ ngReddit.controller('NgRedditCtrl', function($scope, Reddit) {
   // Default to /r/funny
   $scope.category = "funny";
 
-  // Function is called on page load (line 15) and every time the
+  // Function is called on page load (line 48) and every time the
   // search field is changed
   $scope.getPosts = function() {
     Reddit.getPosts($scope.category)
@@ -25,7 +25,10 @@ ngReddit.controller('NgRedditCtrl', function($scope, Reddit) {
   // of the post which will trigger the overlay div's ng-show
   $scope.overlayPost = function(index) {
     var id = '#' + index;
-    $(id).draggable({revert:true});
+    $(id).draggable({
+      revert:true,
+      opacity: 0.5
+    });
 
     var link = "http://www.reddit.com" + $scope.posts[index].data.permalink;
     $('#reddit-'+index).droppable({

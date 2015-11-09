@@ -26,8 +26,11 @@
         <div class="thumbnail" style="background-image:url({{post.data.thumbnail}})"></div>
         <div class="author"> {{ post.data.author }}</div>
         <div class="title">{{ post.data.title }}</div>
+        <div class="comment-sprite"></div>
         <div class="comments">{{ post.data.num_comments }} comments</div>
+        <div class="up-sprite"></div>
         <div class="ups">{{ post.data.ups }} ups</div>
+        <div class="down-sprite"></div>
         <div class="downs">{{ post.data.downs }} downs</div>
         <div class="clear"></div>
 
@@ -38,7 +41,9 @@
             <div class="overlay-author">{{ post.data.author }}</div>
             <div class="overlay-title">{{ post.data.title }}</div>
             <div class="overlay-comments">
+              <img class="overlay-comment-sprite" src="images/transparent.png"></img>
               {{ post.data.num_comments }} comments
+              <img class="overlay-up-sprite" src="images/transparent.png"></img>
               {{ post.data.ups }} ups
             </div>
           </div>
@@ -48,8 +53,10 @@
             Open on Reddit
           </div>
           <div id="mail-{{$index}}" class="droppable-rect mail">
-            <img src="images/mail-logo.png" /><br>
-            Email to a Friend
+            <div class="mail-content">
+              <img src="images/mail-logo.png" /><br>
+              Email to a Friend
+            </div>
           </div>
         </div>
         <!-- end overlay -->
