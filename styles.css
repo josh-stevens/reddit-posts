@@ -25,7 +25,7 @@ hr {
   width: 300px;
   top: 25%;
   left: 15%;
-  position:relative;
+  position:fixed;
   text-align: center;
   overflow: auto;
   /*display:inline-block;*/
@@ -65,9 +65,9 @@ hr {
 
 .instructions {
   color:white;
-  position: relative;
+  position: fixed;
   left: 48%;
-  top: -100px;
+  top: 35%;
   width: 120px;
 }
 
@@ -76,7 +76,7 @@ hr {
   width: 300px;
   height: 150px;
   border-radius: 10px;
-  position: relative;
+  position: fixed;
   left: 65%;
   font-size: 22px;
   text-align:center;
@@ -85,11 +85,11 @@ hr {
 }
 
 .reddit {
-  top: -25%;
+  top: 25%;
 }
 
 .mail {
-  top: -20%;
+  top: 50%;
 }
 
 .mail-content {
